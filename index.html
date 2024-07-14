@@ -48,54 +48,53 @@
     </style>
 </head>
 <body>
-    <h2>Alpine.js Widget</h2>
+   <h2>Alpine.js Widget</h2>
 
     <div x-data="{ title: 'Hello, Thandazile Ntshangase' }">
         <p x-text="title"></p>
         <button x-on:click="title = 'Keep on exploring AlpineJS'">Click In</button>
         <button x-on:click="title = 'Thank you'">Click Out</button>
     </div>
-
+    
     <br>
-
-    div x-data="{ message: 'AlpineJS is the best' }">
+    
+    <div x-data="{ message: 'AlpineJS is the best' }">
         <p x-text="message"></p>
         <input type="text" x-model="message">
     </div>
-
+    
     <br>
-
-    <div x-data="{ content: '<p>More about AlpineJS</p>'}">
+    
+    <div x-data="{ content: '<p>More about AlpineJS</p>' }">
         <div x-html="content"></div>
     </div>
-
+    
     <br>
-
+    
     <div x-data>
         <div x-ref="sentence">This is AlpineJS</div>
         <button @click="$refs.sentence.innerText = 'I just changed'">Change Sentence</button>
     </div>
-
+    
     <br>
-
-    <div x-data="{ counter: 0 }">
+    
+    <div x-data="{ counter: 0, max: 10 }">
         <div class="counter-display" x-text="counter"></div>
-        <button @click="counter++">Increment</button>
+        <button @click="counter < max ? counter++ : alert('Max limit reached')">Increment</button>
         <button @click="counter > 0 ? counter-- : 0">Decrement</button>
+        <button @click="counter = 0">Reset</button>
     </div>
-
+    
     <br>
-
-
+    
     <div x-data="{ count: 0 }">
         <button @click="count++">+</button>
         <span class="counter-display" x-text="count"></span>
         <button @click="count > 0 ? count-- : 0">-</button>
     </div>
-
+    
     <br>
-
-    <!-- Grocery List -->
+    
     <div x-data="{ groceries: ['Milk', 'Eggs', 'Cheese', 'Beans', 'Bread'] }">
         <p>Groceries:</p>
         <ul class="list-none">
@@ -104,6 +103,5 @@
             </template>
         </ul>
     </div>
-
 </body>
 </html>
