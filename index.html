@@ -102,6 +102,8 @@
                 <li x-text="item"></li>
             </template>
         </ul>
+        <input type="text" x-model="newGrocery" placeholder="Enter a new grocery item">
+        <button @click="if (newGrocery.trim()) { groceries.push(newGrocery); newGrocery = ''; }">Add Grocery</button>
     </div>
 </body>
 </html>
